@@ -1,13 +1,40 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/addCgi/addCgi"
+    "pages/addCgi/addCgi",
+    "pages/order/list/list",
+    "pages/userInfo/userInfo"
   ],
   "window":{
     "backgroundColor":"#F6F6F6",
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "Wafer Quick Start",
+    "navigationBarTitleText": "shenghuoquan",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#FF9C35",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "image/icon/home-s.png",
+        "iconPath": "image/icon/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/icon/order-s.png",
+        "iconPath": "image/icon/order.png",
+        "pagePath": "pages/order/list/list",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "image/icon/userInfo-s.png",
+        "iconPath": "image/icon/userInfo.png",
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "我的"
+      }
+    ]
   }
 }

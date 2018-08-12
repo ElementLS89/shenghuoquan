@@ -35,7 +35,7 @@ const CONF = {
          * 新加坡：sg
          * @see https://www.qcloud.com/document/product/436/6224
          */
-        region: 'ap-south',
+        region: 'ap-guangzhou',
         // Bucket 名称
         fileBucket: 'qcloudtest',
         // 文件夹
