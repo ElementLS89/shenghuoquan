@@ -8,7 +8,8 @@ Page({
         userInfo: {},
         logged: false,
         takeSession: false,
-        requestResult: ''
+        requestResult: '',
+        imgUrl:''
     },
 
     // 用户登录示例
@@ -80,7 +81,6 @@ Page({
             wx.request(options)
         }
     },
-
     // 上传图片接口
     doUpload: function () {
         var that = this
@@ -122,13 +122,13 @@ Page({
         })
     },
 
-    // 预览图片
-    previewImg: function () {
-        wx.previewImage({
-            current: this.data.imgUrl,
-            urls: [this.data.imgUrl]
-        })
-    },
+  // 预览图片
+  previewImg: function () {
+    wx.previewImage({
+      current: this.data.imgUrl,
+      urls: [this.data.imgUrl]
+    })
+  },
 
     // 切换信道的按钮
     switchChange: function (e) {
