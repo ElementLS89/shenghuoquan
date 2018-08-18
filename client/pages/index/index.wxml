@@ -1,26 +1,66 @@
 <!--index.wxml-->
-<view class="container">
+<import src="../common/mainTabCell.wxml" />
 
-    <!-- 上传图片测试 -->
-    <view class="uploader">
-        <view class="uploader-text" bindtap="doUpload">
-            <text>上传图片</text>
-        </view>
-        <view class="uploader-container" wx:if="{{imgUrl}}">
-            <image
-                class="uploader-image"
-                src="{{imgUrl}}"
-                mode="aspectFit"
-                bindtap="previewImg"
-            ></image>
-        </view>
-    </view>
-
-
-    <!-- 上传图片测试 -->
-    <view class="uploader">
-        <navigator url="../addCgi/addCgi" open-type="navigate" class="uploader-text">
-            <text>快速增加 CGI</text>
-        </navigator>
-    </view>
+<view class="top-tab">
+  <view class="top-tab-item {{currentTopItem==idx ? 'active' : ''}}" wx:for="{{topTabItems}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="switchTab">
+    {{item}}
+  </view>
 </view>
+
+
+<swiper class="swiper" current="{{currentTopItem}}" bindchange="bindChange" duration="300" style="height:{{swiperHeight}}px" >
+
+<!--段子-->
+  <swiper-item>
+    <scroll-view class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData" bindscrolltoupper="refreshData">
+      
+      <block wx:for="{{textDataList}}" wx:for-item="item">
+          <navigator url="detail?id={{item.id}}">
+            <template is="mainTabCell" data="{{item}}" />
+          </navigator>
+      </block>
+      
+    </scroll-view>
+  </swiper-item>
+  
+  <!--视频-->
+  <swiper-item>
+    <scroll-view class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData" bindscrolltoupper="refreshData" >
+      
+      <block wx:for="{{videoDataList}}" wx:for-item="item">
+          <navigator url="detail?id={{item.id}}">
+            <template is="mainTabCell" data="{{item}}" />
+          </navigator>
+      </block>
+      
+    </scroll-view>
+  </swiper-item>
+
+  <!--图片-->
+  <swiper-item>
+    <scroll-view class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData" bindscrolltoupper="refreshData">
+      
+      <block wx:for="{{pictureDataList}}" wx:for-item="item">
+          <navigator url="detail?id={{item.id}}">
+            <template is="mainTabCell" data="{{item}}" />
+          </navigator>
+      </block>
+      
+    </scroll-view>
+  </swiper-item>
+
+  <!--声音-->
+  <swiper-item>
+    <scroll-view class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData" bindscrolltoupper="refreshData">
+      
+      <block wx:for="{{voiceDataList}}" wx:for-item="item">
+          <navigator url="detail?id={{item.id}}">
+            <template is="mainTabCell" data="{{item}}" />
+          </navigator>
+      </block>
+      
+    </scroll-view>
+  </swiper-item>
+
+</swiper>
+

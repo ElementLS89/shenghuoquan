@@ -22,6 +22,10 @@ var config = {
 
         // 上传图片接口
         uploadUrl: `${host}/weapp/upload`
+    },
+
+    source: {
+        sourceURL: "https://route.showapi.com/255-1"
     }
 };
 

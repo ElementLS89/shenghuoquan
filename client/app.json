@@ -1,8 +1,9 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/speak/speak",
     "pages/addCgi/addCgi",
-    "pages/order/list/list",
+    "pages/order/list",
     "pages/userInfo/userInfo"
   ],
   "window":{
@@ -24,9 +25,15 @@
         "text": "首页"
       },
       {
+        "selectedIconPath": "image/icon/share.png",
+        "iconPath": "image/icon/edit.png",
+        "pagePath": "pages/speak/speak",
+        "text": "写帖"
+      },
+      {
         "selectedIconPath": "image/icon/order-s.png",
         "iconPath": "image/icon/order.png",
-        "pagePath": "pages/order/list/list",
+        "pagePath": "pages/order/list",
         "text": "订单"
       },
       {
